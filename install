@@ -1,0 +1,587 @@
+Script started on Monday 09 May 2016 11:12:56 AM IST
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ bundle install
+Using rake 11.1.2
+Using i18n 0.7.0
+Using json 1.8.3
+Using minitest 5.8.4
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.0.0
+Using rack 1.6.4
+Using mime-types 2.99.1
+Using arel 6.0.3
+Using bcrypt 3.1.7
+Using debug_inspector 0.0.2
+Using sass 3.4.21
+Using byebug 8.2.2
+Using coffee-script-source 1.10.0
+Using execjs 2.6.0
+Using thor 0.19.1
+Using concurrent-ruby 1.0.1
+Using multi_json 1.11.2
+Using puma 3.1.0
+Using bundler 1.11.2
+Using tilt 2.0.2
+Using spring 1.6.4
+Using sqlite3 1.3.11
+Using rdoc 4.2.2
+Using tzinfo 1.2.2
+Using nokogiri 1.6.7.2
+Using rack-test 0.6.3
+Using mail 2.6.3
+Using binding_of_caller 0.7.2
+Using bootstrap-sass 3.2.0.0
+Using coffee-script 2.4.1
+Using uglifier 2.7.2
+Using sprockets 3.5.2
+Using sdoc 0.4.1
+Using activesupport 4.2.5.2
+Using loofah 2.0.3
+Using rails-deprecated_sanitizer 1.0.3
+Using globalid 0.3.6
+Using activemodel 4.2.5.2
+Using jbuilder 2.4.1
+Using rails-html-sanitizer 1.0.3
+Using rails-dom-testing 1.0.7
+Using activejob 4.2.5.2
+Using activerecord 4.2.5.2
+Using actionview 4.2.5.2
+Using actionpack 4.2.5.2
+Using actionmailer 4.2.5.2
+Using railties 4.2.5.2
+Using sprockets-rails 3.0.4
+Using coffee-rails 4.1.1
+Using jquery-rails 4.1.1
+Using jquery-ui-rails 5.0.5
+Using rails 4.2.5.2
+Using sass-rails 5.0.4
+Using web-console 2.3.0
+Using turbolinks 2.5.3
+Using rails4-autocomplete 1.1.1
+[32mBundle complete! 17 Gemfile dependencies, 59 gems now installed.[0m
+[32mUse `bundle show [gemname]` to see where a bundled gem is installed.[0m
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ rails generate autocomplete:install
+Bundler is using a binstub that was created for a different gem.
+This is deprecated, in future versions you may need to `bundle binstub rails` to work around a system/bundle conflict.
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1390:in `collection': can't use collection outside resource(s) scope (ArgumentError)
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1529:in `decomposed_match'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1518:in `block in match'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1508:in `each'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1508:in `match'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:690:in `map_method'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:651:in `get'
+	from /home/jibin/sampleprojects/callhistory/config/routes.rb:4:in `block in <top (required)>'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/route_set.rb:432:in `instance_exec'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/route_set.rb:432:in `eval_block'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/route_set.rb:410:in `draw'
+	from /home/jibin/sampleprojects/callhistory/config/routes.rb:1:in `<top (required)>'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:268:in `load'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:268:in `block in load'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:240:in `load_dependency'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:268:in `load'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:40:in `each'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:16:in `reload!'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/file_update_checker.rb:75:in `call'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/file_update_checker.rb:75:in `execute'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:7:in `execute'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/finisher.rb:81:in `block (2 levels) in <module:Finisher>'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/callbacks.rb:446:in `instance_exec'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/callbacks.rb:446:in `block in make_lambda'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/callbacks.rb:192:in `call'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/callbacks.rb:192:in `block in simple'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/callbacks.rb:504:in `call'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/callbacks.rb:504:in `block in call'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/callbacks.rb:504:in `each'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/callbacks.rb:504:in `call'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/callbacks.rb:778:in `_run_prepare_callbacks'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/callbacks.rb:81:in `run_callbacks'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/reloader.rb:83:in `prepare!'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/reloader.rb:55:in `prepare!'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/spring-1.6.4/lib/spring/application.rb:153:in `serve'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/spring-1.6.4/lib/spring/application.rb:131:in `block in run'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/spring-1.6.4/lib/spring/application.rb:125:in `loop'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/spring-1.6.4/lib/spring/application.rb:125:in `run'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/spring-1.6.4/lib/spring/application/boot.rb:18:in `<top (required)>'
+	from /home/jibin/.rvm/rubies/ruby-2.2.3/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/jibin/.rvm/rubies/ruby-2.2.3/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from -e:1:in `<main>'
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ rails generate autocomplete:install
+Bundler is using a binstub that was created for a different gem.
+This is deprecated, in future versions you may need to `bundle binstub rails` to work around a system/bundle conflict.
+Running via Spring preloader in process 7872
+[1m[32m      create[0m  public/javascripts/autocomplete-rails.js
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ gem install bundler
+Fetching: bundler-1.12.3.gemFetching: bundler-1.12.3.gem (  1%)Fetching: bundler-1.12.3.gem (  2%)Fetching: bundler-1.12.3.gem (  3%)Fetching: bundler-1.12.3.gem (  4%)Fetching: bundler-1.12.3.gem (  5%)Fetching: bundler-1.12.3.gem (  6%)Fetching: bundler-1.12.3.gem (  7%)Fetching: bundler-1.12.3.gem (  8%)Fetching: bundler-1.12.3.gem (  9%)Fetching: bundler-1.12.3.gem ( 10%)Fetching: bundler-1.12.3.gem ( 11%)Fetching: bundler-1.12.3.gem ( 12%)Fetching: bundler-1.12.3.gem ( 18%)Fetching: bundler-1.12.3.gem ( 24%)Fetching: bundler-1.12.3.gem ( 29%)Fetching: bundler-1.12.3.gem ( 35%)Fetching: bundler-1.12.3.gem ( 41%)Fetching: bundler-1.12.3.gem ( 47%)Fetching: bundler-1.12.3.gem ( 53%)Fetching: bundler-1.12.3.gem ( 59%)Fetching: bundler-1.12.3.gem ( 65%)Fetching: bundler-1.12.3.gem ( 70%)Fetching: bundler-1.12.3.gem ( 76%)Fetching: bundler-1.12.3.gem ( 82%)Fetching: bundler-1.12.3.gem ( 88%)Fetching: bundler-1.12.3.gem ( 94%)Fetching: bundler-1.12.3.gem (100%)Fetching: bundler-1.12.3.gem (100%)
+Successfully installed bundler-1.12.3
+1 gem installed
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ gem install bundlerrails generate autocomplete:install[21Pbundle install
+Using rake 11.1.2
+Using i18n 0.7.0
+Using json 1.8.3
+Using minitest 5.8.4
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.0.0
+Using rack 1.6.4
+Using mime-types 2.99.1
+Using arel 6.0.3
+Using bcrypt 3.1.7
+Using debug_inspector 0.0.2
+Using sass 3.4.21
+Using byebug 8.2.2
+Using coffee-script-source 1.10.0
+Using execjs 2.6.0
+Using thor 0.19.1
+Using concurrent-ruby 1.0.1
+Using multi_json 1.11.2
+Using puma 3.1.0
+Using bundler 1.12.3
+Using tilt 2.0.2
+Using spring 1.6.4
+Using sqlite3 1.3.11
+Using rdoc 4.2.2
+Using tzinfo 1.2.2
+Using nokogiri 1.6.7.2
+Using rack-test 0.6.3
+Using mail 2.6.3
+Using binding_of_caller 0.7.2
+Using bootstrap-sass 3.2.0.0
+Using coffee-script 2.4.1
+Using uglifier 2.7.2
+Using sprockets 3.5.2
+Using sdoc 0.4.1
+Using activesupport 4.2.5.2
+Using loofah 2.0.3
+Using rails-deprecated_sanitizer 1.0.3
+Using globalid 0.3.6
+Using activemodel 4.2.5.2
+Using jbuilder 2.4.1
+Using rails-html-sanitizer 1.0.3
+Using rails-dom-testing 1.0.7
+Using activejob 4.2.5.2
+Using activerecord 4.2.5.2
+Using actionview 4.2.5.2
+Using actionpack 4.2.5.2
+Using actionmailer 4.2.5.2
+Using railties 4.2.5.2
+Using sprockets-rails 3.0.4
+Using coffee-rails 4.1.1
+Using jquery-rails 4.1.1
+Using rails 4.2.5.2
+Using sass-rails 5.0.4
+Using web-console 2.3.0
+Using turbolinks 2.5.3
+[32mBundle complete! 15 Gemfile dependencies, 57 gems now installed.[0m
+[32mUse `bundle show [gemname]` to see where a bundled gem is installed.[0m
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ bundle install
+Using rake 11.1.2
+Using i18n 0.7.0
+Using json 1.8.3
+Using minitest 5.8.4
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.0.0
+Using rack 1.6.4
+Using mime-types 2.99.1
+Using arel 6.0.3
+Using bcrypt 3.1.7
+Using debug_inspector 0.0.2
+Using sass 3.4.21
+Using byebug 8.2.2
+Using coffee-script-source 1.10.0
+Using execjs 2.6.0
+Using thor 0.19.1
+Using concurrent-ruby 1.0.1
+Using multi_json 1.11.2
+Using puma 3.1.0
+Using bundler 1.12.3
+Using tilt 2.0.2
+Using spring 1.6.4
+Using sqlite3 1.3.11
+Using rdoc 4.2.2
+Using tzinfo 1.2.2
+Using nokogiri 1.6.7.2
+Using rack-test 0.6.3
+Using mail 2.6.3
+Using binding_of_caller 0.7.2
+Using bootstrap-sass 3.2.0.0
+Using coffee-script 2.4.1
+Using uglifier 2.7.2
+Using sprockets 3.5.2
+Using sdoc 0.4.1
+Using activesupport 4.2.5.2
+Using loofah 2.0.3
+Using rails-deprecated_sanitizer 1.0.3
+Using globalid 0.3.6
+Using activemodel 4.2.5.2
+Using jbuilder 2.4.1
+Using rails-html-sanitizer 1.0.3
+Using rails-dom-testing 1.0.7
+Using activejob 4.2.5.2
+Using activerecord 4.2.5.2
+Using actionview 4.2.5.2
+Using actionpack 4.2.5.2
+Using actionmailer 4.2.5.2
+Using railties 4.2.5.2
+Using sprockets-rails 3.0.4
+Using coffee-rails 4.1.1
+Using jquery-rails 4.1.1
+Using rails 4.2.5.2
+Using sass-rails 5.0.4
+Using web-console 2.3.0
+Using turbolinks 2.5.3
+[32mBundle complete! 15 Gemfile dependencies, 57 gems now installed.[0m
+[32mUse `bundle show [gemname]` to see where a bundled gem is installed.[0m
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ rails s -p 5000
+Bundler is using a binstub that was created for a different gem.
+This is deprecated, in future versions you may need to `bundle binstub rails` to work around a system/bundle conflict.
+=> Booting Puma
+=> Rails 4.2.5.2 application starting in development on http://localhost:5000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+Exiting
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1390:in `collection': can't use collection outside resource(s) scope (ArgumentError)
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1529:in `decomposed_match'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1518:in `block in match'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1508:in `each'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1508:in `match'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:690:in `map_method'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:651:in `get'
+	from /home/jibin/sampleprojects/callhistory/config/routes.rb:4:in `block in <top (required)>'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/route_set.rb:432:in `instance_exec'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/route_set.rb:432:in `eval_block'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/route_set.rb:410:in `draw'
+	from /home/jibin/sampleprojects/callhistory/config/routes.rb:1:in `<top (required)>'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:268:in `load'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:268:in `block in load'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:240:in `load_dependency'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:268:in `load'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:40:in `each'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:16:in `reload!'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/file_update_checker.rb:75:in `call'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/file_update_checker.rb:75:in `execute'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:27:in `updater'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/initializable.rb:30:in `instance_exec'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/initializable.rb:30:in `run'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/initializable.rb:55:in `block in run_initializers'
+	from /home/jibin/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:226:in `block in tsort_each'
+	from /home/jibin/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:348:in `block (2 levels) in each_strongly_connected_component'
+	from /home/jibin/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:429:in `each_strongly_connected_component_from'
+	from /home/jibin/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:347:in `block in each_strongly_connected_component'
+	from /home/jibin/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:345:in `each'
+	from /home/jibin/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:345:in `call'
+	from /home/jibin/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:345:in `each_strongly_connected_component'
+	from /home/jibin/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:224:in `tsort_each'
+	from /home/jibin/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:203:in `tsort_each'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/initializable.rb:54:in `run_initializers'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application.rb:352:in `initialize!'
+	from /home/jibin/sampleprojects/callhistory/config/environment.rb:5:in `<top (required)>'
+	from /home/jibin/sampleprojects/callhistory/config.ru:3:in `require'
+	from /home/jibin/sampleprojects/callhistory/config.ru:3:in `block in <main>'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/builder.rb:55:in `instance_eval'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/builder.rb:55:in `initialize'
+	from /home/jibin/sampleprojects/callhistory/config.ru:in `new'
+	from /home/jibin/sampleprojects/callhistory/config.ru:in `<main>'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/builder.rb:49:in `eval'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/builder.rb:49:in `new_from_string'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/builder.rb:40:in `parse_file'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/server.rb:299:in `build_app_and_options_from_config'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/server.rb:208:in `app'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/commands/server.rb:61:in `app'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/rack-1.6.4/lib/rack/server.rb:336:in `wrapped_app'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/commands/server.rb:139:in `log_to_stdout'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/commands/server.rb:78:in `start'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/commands/commands_tasks.rb:75:in `tap'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/commands/commands_tasks.rb:75:in `server'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/commands.rb:17:in `<top (required)>'
+	from /home/jibin/sampleprojects/callhistory/bin/rails:9:in `require'
+	from /home/jibin/sampleprojects/callhistory/bin/rails:9:in `<top (required)>'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/spring-1.6.4/lib/spring/client/rails.rb:28:in `load'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/spring-1.6.4/lib/spring/client/rails.rb:28:in `call'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/spring-1.6.4/lib/spring/client/command.rb:7:in `call'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/spring-1.6.4/lib/spring/client.rb:28:in `run'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/spring-1.6.4/bin/spring:49:in `<top (required)>'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/spring-1.6.4/lib/spring/binstub.rb:11:in `load'
+	from /home/jibin/.rvm/gems/ruby-2.2.3/gems/spring-1.6.4/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /home/jibin/sampleprojects/callhistory/bin/spring:13:in `require'
+	from /home/jibin/sampleprojects/callhistory/bin/spring:13:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ rm -rf bin/*
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ bundle exec spring binstub --all
+* bin/rake: generated with spring
+* bin/rails: generated with spring
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ bundle exec spring binstub --all[20Prm -rf bin/*ails s -p 5000
+Bundler is using a binstub that was created for a different gem.
+This is deprecated, in future versions you may need to `bundle binstub rails` to work around a system/bundle conflict.
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+  -r, [--ruby=PATH]                                      # Path to the Ruby binary of your choice
+                                                         # Default: /home/jibin/.rvm/rubies/ruby-2.2.3/bin/ruby
+  -m, [--template=TEMPLATE]                              # Path to some application template (can be a filesystem path or URL)
+      [--skip-gemfile], [--no-skip-gemfile]              # Don't create a Gemfile
+  -B, [--skip-bundle], [--no-skip-bundle]                # Don't run bundle install
+  -G, [--skip-git], [--no-skip-git]                      # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                  # Skip source control .keep files
+  -O, [--skip-active-record], [--no-skip-active-record]  # Skip Active Record files
+  -S, [--skip-sprockets], [--no-skip-sprockets]          # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                # Don't install Spring application preloader
+  -d, [--database=DATABASE]                              # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                         # Default: sqlite3
+  -j, [--javascript=JAVASCRIPT]                          # Preconfigure for selected JavaScript library
+                                                         # Default: jquery
+  -J, [--skip-javascript], [--no-skip-javascript]        # Skip JavaScript files
+      [--dev], [--no-dev]                                # Setup the application with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                              # Setup the application with Gemfile pointing to Rails repository
+      [--skip-turbolinks], [--no-skip-turbolinks]        # Skip turbolinks gem
+  -T, [--skip-test-unit], [--no-skip-test-unit]          # Skip Test::Unit files
+      [--rc=RC]                                          # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                            # Skip loading of extra configuration options from .railsrc file
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]        # Show this help message and quit
+  -v, [--version], [--no-version]  # Show Rails version number and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    'rails new' runs in the .railsrc configuration file in your home directory.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    defaults values shown above in this help message.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+    See the README in the newly created application to get going.
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ gem uninstall rails
+
+Select gem to uninstall:
+ 1. rails-3.0.20
+ 2. rails-3.2.17
+ 3. rails-3.2.22
+ 4. rails-4.2.0
+ 5. rails-4.2.1
+ 6. rails-4.2.4
+ 7. rails-4.2.5.2
+ 8. rails-4.2.6
+ 9. All versions
+> 
+Error: must enter a number [1-9]
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ bundle exec spring binstub --all
+* bin/rake: spring already present
+* bin/rails: spring already present
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ bundle exec spring binstub --all[13Pgem uninstall rails[4Prails s -p 5000bundle exec spring binstub --all[20Prm -rf bin/*bundle exec spring binstub --all[17Prails s -p 5000[K[K[K[K[K[K[K
+Bundler is using a binstub that was created for a different gem.
+This is deprecated, in future versions you may need to `bundle binstub rails` to work around a system/bundle conflict.
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+  -r, [--ruby=PATH]                                      # Path to the Ruby binary of your choice
+                                                         # Default: /home/jibin/.rvm/rubies/ruby-2.2.3/bin/ruby
+  -m, [--template=TEMPLATE]                              # Path to some application template (can be a filesystem path or URL)
+      [--skip-gemfile], [--no-skip-gemfile]              # Don't create a Gemfile
+  -B, [--skip-bundle], [--no-skip-bundle]                # Don't run bundle install
+  -G, [--skip-git], [--no-skip-git]                      # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                  # Skip source control .keep files
+  -O, [--skip-active-record], [--no-skip-active-record]  # Skip Active Record files
+  -S, [--skip-sprockets], [--no-skip-sprockets]          # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                # Don't install Spring application preloader
+  -d, [--database=DATABASE]                              # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                         # Default: sqlite3
+  -j, [--javascript=JAVASCRIPT]                          # Preconfigure for selected JavaScript library
+                                                         # Default: jquery
+  -J, [--skip-javascript], [--no-skip-javascript]        # Skip JavaScript files
+      [--dev], [--no-dev]                                # Setup the application with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                              # Setup the application with Gemfile pointing to Rails repository
+      [--skip-turbolinks], [--no-skip-turbolinks]        # Skip turbolinks gem
+  -T, [--skip-test-unit], [--no-skip-test-unit]          # Skip Test::Unit files
+      [--rc=RC]                                          # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                            # Skip loading of extra configuration options from .railsrc file
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]        # Show this help message and quit
+  -v, [--version], [--no-version]  # Show Rails version number and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    'rails new' runs in the .railsrc configuration file in your home directory.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    defaults values shown above in this help message.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+    See the README in the newly created application to get going.
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ rails s bundle exec spring binstub --all[13Pgem uninstall rails[4Prails s -p 5000bundle exec spring binstub --all[20Prm -rf bin/*ails s -p 5000[1Pbundle installgem install bundlerrails generate autocomplete:install[21Pbundle install[7Prails ske db:migraterollback STEP=2n[9Pdeleterollback STEP=n[K1
+rake aborted!
+ArgumentError: can't use collection outside resource(s) scope
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1390:in `collection'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1529:in `decomposed_match'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1518:in `block in match'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1508:in `each'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1508:in `match'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:690:in `map_method'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:651:in `get'
+/home/jibin/sampleprojects/callhistory/config/routes.rb:4:in `block in <top (required)>'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/route_set.rb:432:in `instance_exec'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/route_set.rb:432:in `eval_block'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/route_set.rb:410:in `draw'
+/home/jibin/sampleprojects/callhistory/config/routes.rb:1:in `<top (required)>'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:268:in `load'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:268:in `block in load'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:240:in `load_dependency'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:268:in `load'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:40:in `each'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:16:in `reload!'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/file_update_checker.rb:75:in `call'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/file_update_checker.rb:75:in `execute'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:27:in `updater'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/initializable.rb:30:in `instance_exec'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/initializable.rb:30:in `run'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/initializable.rb:55:in `block in run_initializers'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/initializable.rb:54:in `run_initializers'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application.rb:352:in `initialize!'
+/home/jibin/sampleprojects/callhistory/config/environment.rb:5:in `<top (required)>'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application.rb:328:in `require'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application.rb:328:in `require_environment!'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+Tasks: TOP => db:rollback => environment
+(See full trace by running task with --trace)
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ rake db:rollback STEP=1[Kn
+rake aborted!
+ArgumentError: can't use collection outside resource(s) scope
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1390:in `collection'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1529:in `decomposed_match'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1518:in `block in match'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1508:in `each'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:1508:in `match'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:690:in `map_method'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/mapper.rb:651:in `get'
+/home/jibin/sampleprojects/callhistory/config/routes.rb:4:in `block in <top (required)>'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/route_set.rb:432:in `instance_exec'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/route_set.rb:432:in `eval_block'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.2/lib/action_dispatch/routing/route_set.rb:410:in `draw'
+/home/jibin/sampleprojects/callhistory/config/routes.rb:1:in `<top (required)>'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:268:in `load'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:268:in `block in load'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:240:in `load_dependency'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/dependencies.rb:268:in `load'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:40:in `each'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:16:in `reload!'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/file_update_checker.rb:75:in `call'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.5.2/lib/active_support/file_update_checker.rb:75:in `execute'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:27:in `updater'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/initializable.rb:30:in `instance_exec'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/initializable.rb:30:in `run'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/initializable.rb:55:in `block in run_initializers'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/initializable.rb:54:in `run_initializers'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application.rb:352:in `initialize!'
+/home/jibin/sampleprojects/callhistory/config/environment.rb:5:in `<top (required)>'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application.rb:328:in `require'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application.rb:328:in `require_environment!'
+/home/jibin/.rvm/gems/ruby-2.2.3/gems/railties-4.2.5.2/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+Tasks: TOP => db:rollback => environment
+(See full trace by running task with --trace)
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ rake db:rollback STEP=n1ils s [Kbundle exec spring binstub --allrails s [K
+Bundler is using a binstub that was created for a different gem.
+This is deprecated, in future versions you may need to `bundle binstub rails` to work around a system/bundle conflict.
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+  -r, [--ruby=PATH]                                      # Path to the Ruby binary of your choice
+                                                         # Default: /home/jibin/.rvm/rubies/ruby-2.2.3/bin/ruby
+  -m, [--template=TEMPLATE]                              # Path to some application template (can be a filesystem path or URL)
+      [--skip-gemfile], [--no-skip-gemfile]              # Don't create a Gemfile
+  -B, [--skip-bundle], [--no-skip-bundle]                # Don't run bundle install
+  -G, [--skip-git], [--no-skip-git]                      # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                  # Skip source control .keep files
+  -O, [--skip-active-record], [--no-skip-active-record]  # Skip Active Record files
+  -S, [--skip-sprockets], [--no-skip-sprockets]          # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                # Don't install Spring application preloader
+  -d, [--database=DATABASE]                              # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                         # Default: sqlite3
+  -j, [--javascript=JAVASCRIPT]                          # Preconfigure for selected JavaScript library
+                                                         # Default: jquery
+  -J, [--skip-javascript], [--no-skip-javascript]        # Skip JavaScript files
+      [--dev], [--no-dev]                                # Setup the application with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                              # Setup the application with Gemfile pointing to Rails repository
+      [--skip-turbolinks], [--no-skip-turbolinks]        # Skip turbolinks gem
+  -T, [--skip-test-unit], [--no-skip-test-unit]          # Skip Test::Unit files
+      [--rc=RC]                                          # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                            # Skip loading of extra configuration options from .railsrc file
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]        # Show this help message and quit
+  -v, [--version], [--no-version]  # Show Rails version number and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    'rails new' runs in the .railsrc configuration file in your home directory.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    defaults values shown above in this help message.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+    See the README in the newly created application to get going.
+]0;jibin@jibin: ~/sampleprojects/callhistoryjibin@jibin:~/sampleprojects/callhistory$ rails s ke db:rollback STEP=n1ils s [Kbundle exec spring binstub --all[13Pgem uninstall rails[4Prails s -p 5000bundle exec spring binstub --all[20Prm -rf bin/*ails s -p 5000[1Pbundle installgem install bundlerrails generate autocomplete:install[21Pbundle install[7Prails ske db:migraterollback STEP=2n[9Pdeletemigrate[1Pdeletemigrateuninitialized constant Soulmaterails s[Kuninitialized constant Soulmaterails s[Kcd callhistorybundle install[3Prake routesbundle installrake search_suggestions:index[8Pinstall elasticsearch[5@brew [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Prake db:migrateils g resource search_suggestion term popularity:integer[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cke routes[Ksearch_suggestions:index[14Pdb:migrateils g resource search_suggestion term popularity:integer[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[23Penerate autocomplete:install[21Pbundle install[7Prails cs -p 5000cd sampleprojects/toyapp[9Prails s -p 5000[1Pbundle installrails s -p 5000[1Pbundle install[7Prails scd rails4/integration[14Prails scd rails4/integration[14Prails sbundle installrails s -p 5000[1Pbundle installrails s -p 5000cd sampleprojects/toyapp[9Prails s -p 5000c[Kbundle installrails generate autocomplete:install resource search_suggestion term popularity:integer[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cke db:migrate[Ksearch_suggestions:indexroutes[Kils g resource search_suggestion term popularity:integer[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cke db:migrate[Kbrew install elasticsearch[5P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crake search_suggestions:index[15Pbundle install[3Prake routesbundle installcd callhistory[7Prails suninitialized con

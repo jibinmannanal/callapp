@@ -1,0 +1,16 @@
+
+
+<li id="micropost-<%= comment.id %>">
+
+  <span class="user">Client:<%= comment.client.name  %></span>
+
+  <span class="content"><%= comment.comment %></span>
+  <span class="timestamp">
+    Posted <%= comment.created_at %> ago.
+  </span>
+  <% if comment.client.admin == false  %>
+     <%= link_to 'Edit', edit_organization_client_comment_path(comment.organization.id,comment.client.id,comment) %>|
+      <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <% end %>
+</li>

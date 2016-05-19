@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+<p id="notice"><%= notice %></p>
+<div class="content">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1>
+  <strong>Name:</strong>
+  <%= @client.name %>
+</h1>
+      </div>
+    </div>
+
+<%= link_to edit_organization_client_path(@organization,@client) ,class: "btn btn-default" do%><i class="glyphicon glyphicon-pencil"></i>
+  <% end %>
+  <div class="panel-body">
+
+</div>
+    </div>
+
+
+<div class="col-md-8">
+
+
+    <div class="row">
+      <aside class="col-md-4">
+        <div class="list-group"><%= link_to "Add Contact",   new_organization_client_contact_path(@organization.id,@client), class: "list-group-item active" %>
+        </div>
+        <div class="list-group"><%= link_to "Show Contacts",    organization_client_contacts_path(@organization.id,@client), class: "list-group-item active" %>
+        </div>
+        <% if @client.comments.any? %>
+        <h3>Comments (<%= @client.comments.count %>)</h3>
+
+        <section class="user_info">
+          <%= render 'shared/client_info' %>
+        </section>
+
+        <section class="micropost_form">
+          <%= render 'shared/micropost_form' %>
+        </section>
+
+      </aside>
+
+      <div class="col-md-8">
+        <h3>Comment Feed</h3>
+        <%= render 'shared/feed' %>
+      </div>
+    </div>
+<% end %>
+</div>
+        </div>
+      </div>
+    </div>

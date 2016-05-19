@@ -1,0 +1,9 @@
+
+
+<span class="user">Organization:<%= @c  %></span><br>
+<span class="user">Client:<%= @client.name  %></span>
+<br>
+<%#= link_to gravatar_for(current_user, size: 50), current_user %>
+<h1><%#=  @client.name %></h1>
+<span><%#= link_to "view my profile", current_client %></span>
+<span><%= pluralize(@client.comments.count, "comment") %></span>

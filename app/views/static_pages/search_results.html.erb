@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+<p id="notice"><%= notice %></p>
+<% if @found_clients.present? %>
+
+    <h1>search results for '<%= params[:search_keywords] %>'</h1>
+
+    <div class="table-responsive">
+      <table class="table">
+      <thead>
+      <tr>
+        <th>Organization name</th>
+
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @found_clients.each do |client| %>
+
+          <td><%= client.organization_name %></td>
+
+          <td><%= link_to client, class: "btn btn-default" do %>  <i class="glyphicon glyphicon-eye-open"></i>
+            <% end %></td>
+          <td><%= link_to  edit_client_path(client), class: "btn btn-default" do%><i class="glyphicon glyphicon-pencil"></i>
+            <% end %></td>
+          <td><%= link_to  client, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-default" do %><i class="glyphicon glyphicon-trash"></i>
+            <% end %></td>
+          </tr>
+          <% end %>
+
+      </tbody>
+    </table>
+<% else %>
+    <h1>Sorry not present any result related to '<%= params[:search_keywords] %>'</h1>
+ <% end %>
+</div>
+
+</div>
+      </div>
+    </div>
+
+
+
+
+

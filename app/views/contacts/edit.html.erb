@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+<h1>Update Contact</h1>
+
+<%= render 'form' %>
+<%= link_to  organization_client_contact_path(@organization,@client,@contact) ,class: "btn btn-default" do %>  <i class="glyphicon glyphicon-eye-open"></i>
+<% end %> |
+<%= link_to  organization_client_contact_path(@organization,@client,@contact) ,class: "btn btn-default" do%><i class="glyphicon glyphicon-step-backward"></i>
+<% end %>
+</div>
+      </div>
+    </div>

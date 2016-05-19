@@ -1,0 +1,33 @@
+<% provide(:title, 'Create Contact') %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+      <%= f.hidden_field :organization_id,:value => params[:organization_id] %>
+
+      <%= f.hidden_field :client_id,:value => params[:client_id] %>
+
+
+    <%= f.label :email %><br>
+    <%= f.text_field :email, class: 'form-control' %>
+
+    <%= f.label :phone_number %><br>
+    <%= f.number_field :phone_number , class: 'form-control'%>
+<br>
+
+      <%= f.submit "Create Contact", class: "btn btn-primary" %>
+
+<% end %>
+</div>
+    </div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+<p id="notice"><%= notice %></p>
+<div class="content">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1>
+
+  <strong>Email:</strong>
+  <%= @contact.email %>
+</h1>
+
+<h1>
+  <strong>Phone number:</strong>
+  <%= @contact.phone_number %>
+</h1>
+</div>
+    </div>
+
+<%= link_to edit_organization_client_contact_path(@organization.id,@client.id,@contact.id)  ,class: "btn btn-default" do%><i class="glyphicon glyphicon-pencil"></i>
+  <% end %> |
+<%= link_to  organization_client_contacts_path  , class: "btn btn-default" do%><i class="glyphicon glyphicon-step-backward"></i>
+  <% end %>
+</div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,3 @@
+$ ->
+  GmapsAutoComplete.init()
+  GmapsAutoComplete.autoCompleteInit()
