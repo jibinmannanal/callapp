@@ -1,12 +1,14 @@
+require "bunny"
+require "rabbitmixin"
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
-
+  skip_before_filter :verify_authenticity_token
   # GET /clients
   # GET /clients.json
   def index
     @organization = Organization.find(params[:organization_id])
     @clients = Client.where(:organization_id => @organization)
-  end
+   end
 
   # GET /clients/1
   # GET /clients/1.json
@@ -16,7 +18,15 @@ class ClientsController < ApplicationController
 
     @comment = @client.comments.build
     @feed_items = @client.feed.paginate(page: params[:page], :per_page => 5)
+
     @c=@organization.organization_name
+@con=Contact.where(:client_id => params[:id])
+    if @con.present?
+      @contact = Contact.find(params[:id])
+
+    end
+
+
   end
 
   # GET /clients/new
@@ -38,9 +48,14 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
 
     respond_to do |format|
+
       if @client.save
+
+
+
+
         format.html { redirect_to organization_clients_path(@client.organization_id), notice: 'Client was successfully created.' }
-        format.json { render :show, status: :created, location: organization_clients_url  }
+        format.json { render :show, status: :created, location: @client }
       else
         format.html { render :new }
         format.json { render json: @client.errors, status: :unprocessable_entity }
@@ -80,9 +95,9 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:organization_id ,:name, :client => [])
+      params.require(:client).permit(:organization_id , :name, :client => [])
     end
   def organization_params
-    params.require(:organization).permit(:id, :organization_name, :email, :phone_number, :address)
+    params.require(:organization).permit(:id, :contact_id, :organization_name, :email, :phone_number, :address)
   end
 end

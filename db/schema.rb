@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517063357) do
+ActiveRecord::Schema.define(version: 20160519094848) do
 
   create_table "clients", force: :cascade do |t|
     t.integer  "organization_id"
     t.string   "name"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.boolean  "admin"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.boolean  "admin",           default: true
   end
 
   add_index "clients", ["organization_id"], name: "index_clients_on_organization_id"
@@ -27,11 +27,16 @@ ActiveRecord::Schema.define(version: 20160517063357) do
     t.text     "comment"
     t.integer  "organization_id"
     t.integer  "client_id"
+    t.integer  "contact_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "calltype"
+    t.float    "callduration"
+    t.date     "calltime"
   end
 
   add_index "comments", ["client_id"], name: "index_comments_on_client_id"
+  add_index "comments", ["contact_id"], name: "index_comments_on_contact_id"
   add_index "comments", ["organization_id"], name: "index_comments_on_organization_id"
 
   create_table "contacts", force: :cascade do |t|
@@ -50,9 +55,9 @@ ActiveRecord::Schema.define(version: 20160517063357) do
   create_table "organizations", force: :cascade do |t|
     t.string   "organization_name"
     t.text     "address"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.boolean  "admin"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.boolean  "admin",             default: false
   end
 
   create_table "users", force: :cascade do |t|

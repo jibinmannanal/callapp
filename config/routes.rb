@@ -1,6 +1,25 @@
 Rails.application.routes.draw do
 
 
+
+  namespace :api, :defaults => {:format => :json} do
+    namespace :v1 do
+      resources :clients
+      resources :contacts
+      resources :organizations
+      post 'clients' => 'clients#create', :as => 'register'
+      post 'organization' => 'static_pages#phonenumber', :as => 'fiorg'
+      get 'organization' => 'static_pages#phonenumber_results', :as => 'fior2'
+      get 'contacts/qwerty/:phone_number' => 'contacts#show'
+      get 'contacts/client/:phone_number' => 'contacts#show1'
+    end
+  end
+
+
+  resources :contacts, :except => ['show']
+  get 'contacts/:phone_number' => 'contacts#show'
+
+
 resource :contacts
   resources :comments
   resources :users

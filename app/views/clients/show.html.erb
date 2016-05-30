@@ -25,6 +25,9 @@
 
     <div class="row">
       <aside class="col-md-4">
+        <div class="list-group">
+          <h2> <span class="glyphicon glyphicon-earphone"></span></h2>
+          </div>
         <div class="list-group"><%= link_to "Add Contact",   new_organization_client_contact_path(@organization.id,@client), class: "list-group-item active" %>
         </div>
         <div class="list-group"><%= link_to "Show Contacts",    organization_client_contacts_path(@organization.id,@client), class: "list-group-item active" %>

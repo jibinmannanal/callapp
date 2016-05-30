@@ -13,6 +13,7 @@ class OrganizationsController < ApplicationController
     @organization = Organization.find(params[:id])
     @feed1_items = @organization.feed1.paginate(page: params[:page], :per_page => 5)
     @c=@organization.organization_name
+
   end
 
   # GET /organizations/new
@@ -29,7 +30,12 @@ class OrganizationsController < ApplicationController
   # POST /organizations.json
   def create
 
-    @organization = Organization.find_or_initialize_by(organization_params)
+    @organization =Organization .find_by_organization_name organization_params[:organization_name]
+    if @organization
+      @organization.update(organization_params)
+      redirect_to @organization, notice: 'Organization was successfully updated.'
+    else
+      @organization = Organization.new(organization_params)
 
     respond_to do |format|
       if @organization.save
@@ -39,7 +45,7 @@ class OrganizationsController < ApplicationController
         format.html { render :new }
         format.json { render json: @organization.errors, status: :unprocessable_entity }
       end
-
+end
     end
   end
 

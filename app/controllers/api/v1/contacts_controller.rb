@@ -1,28 +1,64 @@
-class ContactsController < ApplicationController
-  before_action :set_contact, only: [:show, :edit, :update, :destroy]
-
+require "bunny"
+class API::V1::ContactsController < ApplicationController
+  before_action :set_contact, only: [ :edit, :update, :destroy]
+  respond_to :json
   # GET /contacts
   # GET /contacts.json
   def index
-    @organization = Organization.find(params[:organization_id])
-    @client = Client.find(params[:client_id])
-    @contact = Client.find(params[:client_id])
-    @contacts = Contact.where(:client_id => @contact)
+    @org5= Contact.select("*").joins(:client)
+    respond_with @org5
   end
 
   # GET /contacts/1
   # GET /contacts/1.json
-  def show
-    @organization = Organization.find(params[:organization_id])
-    @client = Client.find(params[:client_id])
-    @contact = Contact.find(params[:id])
+
+    def show
+
+      conn = Bunny.new
+      conn.start
+      ch   = conn.create_channel
+      q    = ch.queue("hello")
+      puts " [*] Waiting for messages in #{q.name}. To exit press CTRL+C"
+      q.subscribe(:block => true) do |delivery_info, properties, body|
+        puts " [x] Received #{body}"
+        # cancel the consumer to exit
+        @q= body
+        delivery_info.consumer.cancel
+
+      end
+
+      @org1=Contact.where(:phone_number=>@q)
+       @org5= Contact.select("*").joins(:organization)
+       @org6=@org5.where(:phone_number=>params[:phone_number])
+       @org7= Organization.select('*').joins(:comments, :contacts)
+      @org8= @org7.where(:id=>@org1)
+respond_with @org8
+
+      conn = Bunny.new
+      conn.start
+      ch   = conn.create_channel
+      q    = ch.queue(@q)
+      x    = ch.fanout(@q)
+     q.publish(@org8.to_json)
+      puts " [x] Sent #{@org8}"
+      conn.close
+
+
+    end
+  def show1
+
+
+    @org5= Contact.select("*").joins(:client)
+    respond_with @org6=@org5.where(:phone_number=>params[:phone_number])
+
+
   end
 
   # GET /contacts/new
   def new
 
     @contact = Contact.new
-    @client = Client.find(params[:client_id])
+
     @organization = Organization.find(params[:organization_id])
 
   end
@@ -40,17 +76,17 @@ class ContactsController < ApplicationController
     @contact =Contact.find_by_phone_number contact_params[:phone_number]
     if @contact
       @contact.update(contact_params)
-      redirect_to organization_client_contacts_path(@contact.organization_id,@contact.client_id), notice: 'Contact was successfully updated.'
+      redirect_to organization_contact_path(@contact.organization_id,@contact), notice: 'Contact was successfully updated.'
     else
       @contact = Contact.new(contact_params)
 
       respond_to do |format|
         if @contact.save
-          format.html { redirect_to organization_client_contacts_path(@contact.organization_id,@contact.client_id), notice: 'Contact was successfully created.' }
+          format.html { redirect_to organization_contact_path(@contact.organization_id,@contact), notice: 'Contact was successfully created.' }
 
-          format.json { render :show, status: :created, location: organization_client_contact_path }
+          format.json { render :show, status: :created, location: @contact }
         else
-          format.html { redirect_to new_organization_client_contact_path(@contact.organization_id,@contact.client_id), notice: 'E-mail or phonenumber incorrect' }
+          format.html { redirect_to new_organization_contact_path(@contact.organization_id), notice: 'E-mail or phonenumber incorrect' }
           format.json { render json: @contact.errors, status: :unprocessable_entity }
         end
       end
@@ -85,16 +121,17 @@ class ContactsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
       @contact = Contact.find(params[:id])
     end
   def organization_params
-    params.require(:organization).permit(:id, :organization_name, :email, :phone_number, :address)
+    params.require(:organization).permit(:id, :organization_name,  :phone_number, :address)
   end
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:client_id, :organization_id,:email, :phone_number)
+      params.require(:contact).permit(:id, :organization_id, :phone_number)
     end
   # Never trust parameters from the scary internet, only allow the white list through.
   def client_params
