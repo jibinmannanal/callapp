@@ -4,7 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.text :comment
       t.belongs_to :organization, index: true
       t.belongs_to :client, index: true
-
+      t.belongs_to :contact, index: true
       t.timestamps null: false
     end
 

@@ -13,18 +13,25 @@
         </div>
     <% end %>
     <div class="actions">
-    <div class="field">
+
+
       <%= f.label :comment %><br>
-      <%= f.text_area :comment %>
-    </div>
+      <%= f.text_area :comment, class: 'form-control' %>
+
     <div class="field">
       <%= f.hidden_field :client_id, :value => @client.id %>
     </div>
     <div class="field">
       <%= f.hidden_field :organization_id, :value => @organization.id %>
     </div>
+      <% if @contact.present? %>
+      <div class="field">
+            <%= f.hidden_field :contact_id, :value => @contact.id %>
+    </div>
+
+        <% end %>
     <div class="actions">
       <%= f.submit "Post", class: "btn btn-primary" %>
-    </div>
+    </div>    <%= @comment.id %>
         </div>
 <% end %>

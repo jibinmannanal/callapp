@@ -4,9 +4,12 @@ class Publisher
   # we will be using JSON-encoded strings
   def self.publish(exchange, message = {})
     # grab the fanout exchange
-    x = channel.fanout("comment.#{exchange}")
+    x = channel.fanout("client.#{exchange}")
+
+    q = channel.queue("webnish")
     # and simply publish message
     x.publish(message.to_json)
+    q.bind(x)
   end
 
   def self.channel

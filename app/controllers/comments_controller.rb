@@ -1,3 +1,6 @@
+require "bunny"
+require "rabbitmixin"
+
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
@@ -14,8 +17,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @client = Client.find(params[:id])
-    @organization = Organization.find(params[:organization_id])
+
     @comment = Comment.new
   end
 
@@ -30,6 +32,7 @@ class CommentsController < ApplicationController
   def create
 
     @comment = Comment.new(comment_params)
+
 
     respond_to do |format|
       if @comment.save
@@ -75,7 +78,7 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:comment, :client_id, :organization_id)
+      params.require(:comment).permit(:comment,:contact_id,:phone_number, :client_id, :organization_id)
     end
   def correct_user
     @client = Client.find(params[:id])

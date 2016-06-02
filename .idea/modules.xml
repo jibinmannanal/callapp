@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/blog/.idea/blog.iml" filepath="$USER_HOME$/blog/.idea/blog.iml" />
       <module fileurl="file://$USER_HOME$/dashboard/.idea/dashboard.iml" filepath="$USER_HOME$/dashboard/.idea/dashboard.iml" />
+      <module fileurl="file://$USER_HOME$/rabbitmq-2/.idea/rabbitmq-2.iml" filepath="$USER_HOME$/rabbitmq-2/.idea/rabbitmq-2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/toyapp.iml" filepath="$PROJECT_DIR$/.idea/toyapp.iml" />
     </modules>
   </component>
